@@ -1,13 +1,14 @@
 {
   "name": "@cfn-modules/vpc",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "AWS VPC using two or three availability zones with public and private subnets, VPC endpoints for DynamoDB and S3, Flow Logs, and NAT gateways.",
   "author": "Michael Wittig <michael@widdix.de>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@cfn-modules/vpc-plain": "0.0.4",
-    "@cfn-modules/vpc-subnet": "0.0.7",
-    "@cfn-modules/vpc-flow-log": "0.0.3",
-    "@cfn-modules/vpc-nat-gateway": "0.0.2"
-  }
+    "@cfn-modules/vpc-plain": "0.0.5",
+    "@cfn-modules/vpc-subnet": "0.0.8",
+    "@cfn-modules/vpc-flow-log": "0.0.4",
+    "@cfn-modules/vpc-nat-gateway": "0.0.3"
+  },
+  "keywords": ["cfn-modules", "cfn-modules:ExposeId"]
 }

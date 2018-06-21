@@ -47,7 +47,7 @@ Resources:
   <tbody>
     <tr>
       <td>AlertingModule</td>
-      <td>Stack name of alerting module</td>
+      <td>Stack name of <a href="https://www.npmjs.com/package/@cfn-modules/alerting">alerting module</a></td>
       <td></td>
       <td>false</td>
       <td></td>

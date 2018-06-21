@@ -207,7 +207,7 @@ Outputs:
   ModuleId:
     Value: 'vpc'
   ModuleVersion:
-    Value: '0.0.22'
+    Value: '0.0.23'
   StackName:
     Value: !Ref 'AWS::StackName'
   Id:
@@ -221,19 +221,19 @@ Outputs:
   SubnetIdsPublic:
     Value: !If
     - HasAvailabilityZoneC
-    - !Sub '${SubnetAPublic.Outputs.SubnetId},${SubnetBPublic.Outputs.SubnetId},${SubnetCPublic.Outputs.SubnetId}'
-    - !Sub '${SubnetAPublic.Outputs.SubnetId},${SubnetBPublic.Outputs.SubnetId}'
+    - !Sub '${SubnetAPublic.Outputs.Id},${SubnetBPublic.Outputs.Id},${SubnetCPublic.Outputs.Id}'
+    - !Sub '${SubnetAPublic.Outputs.Id},${SubnetBPublic.Outputs.Id}'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdsPublic'
   SubnetIdsPrivate:
     Value: !If
     - HasAvailabilityZoneC
-    - !Sub '${SubnetAPrivate.Outputs.SubnetId},${SubnetBPrivate.Outputs.SubnetId},${SubnetCPrivate.Outputs.SubnetId}'
-    - !Sub '${SubnetAPrivate.Outputs.SubnetId},${SubnetBPrivate.Outputs.SubnetId}'
+    - !Sub '${SubnetAPrivate.Outputs.Id},${SubnetBPrivate.Outputs.Id},${SubnetCPrivate.Outputs.Id}'
+    - !Sub '${SubnetAPrivate.Outputs.Id},${SubnetBPrivate.Outputs.Id}'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdsPrivate'
   SubnetIdAPublic:
-    Value: !GetAtt 'SubnetAPublic.Outputs.SubnetId'
+    Value: !GetAtt 'SubnetAPublic.Outputs.Id'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdAPublic'
   RouteTableIdAPublic:
@@ -241,7 +241,7 @@ Outputs:
     Export:
       Name: !Sub '${AWS::StackName}-RouteTableIdAPublic'
   SubnetIdAPrivate:
-    Value: !GetAtt 'SubnetAPrivate.Outputs.SubnetId'
+    Value: !GetAtt 'SubnetAPrivate.Outputs.Id'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdAPrivate'
   RouteTableIdAPrivate:
@@ -249,7 +249,7 @@ Outputs:
     Export:
       Name: !Sub '${AWS::StackName}-RouteTableIdAPrivate'
   SubnetIdBPublic:
-    Value: !GetAtt 'SubnetBPublic.Outputs.SubnetId'
+    Value: !GetAtt 'SubnetBPublic.Outputs.Id'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdBPublic'
   RouteTableIdBPublic:
@@ -257,7 +257,7 @@ Outputs:
     Export:
       Name: !Sub '${AWS::StackName}-RouteTableIdBPublic'
   SubnetIdBPrivate:
-    Value: !GetAtt 'SubnetBPrivate.Outputs.SubnetId'
+    Value: !GetAtt 'SubnetBPrivate.Outputs.Id'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdBPrivate'
   RouteTableIdBPrivate:
@@ -266,7 +266,7 @@ Outputs:
       Name: !Sub '${AWS::StackName}-RouteTableIdBPrivate'
   SubnetIdCPublic:
     Condition: HasAvailabilityZoneC
-    Value: !GetAtt 'SubnetCPublic.Outputs.SubnetId'
+    Value: !GetAtt 'SubnetCPublic.Outputs.Id'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdCPublic'
   RouteTableIdCPublic:
@@ -276,7 +276,7 @@ Outputs:
       Name: !Sub '${AWS::StackName}-RouteTableIdCPublic'
   SubnetIdCPrivate:
     Condition: HasAvailabilityZoneC
-    Value: !GetAtt 'SubnetCPrivate.Outputs.SubnetId'
+    Value: !GetAtt 'SubnetCPrivate.Outputs.Id'
     Export:
       Name: !Sub '${AWS::StackName}-SubnetIdCPrivate'
   RouteTableIdCPrivate:
