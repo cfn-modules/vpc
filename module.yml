@@ -79,9 +79,9 @@ Resources:
       Parameters:
         VpcPlainModule: !GetAtt 'VpcPlain.Outputs.StackName'
         Reach: public
-        AZIndex: 0
+        AZIndex: '0'
         AZChar: A
-        SubnetIndex: 0
+        SubnetIndex: '0'
         SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
       TemplateURL: '../vpc-subnet/module.yml'
   SubnetAPrivate:
@@ -90,9 +90,9 @@ Resources:
       Parameters:
         VpcPlainModule: !GetAtt 'VpcPlain.Outputs.StackName'
         Reach: private
-        AZIndex: 0
+        AZIndex: '0'
         AZChar: A
-        SubnetIndex: 1
+        SubnetIndex: '1'
         SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
       TemplateURL: '../vpc-subnet/module.yml'
   NatGatewayA:
@@ -110,9 +110,9 @@ Resources:
       Parameters:
         VpcPlainModule: !GetAtt 'VpcPlain.Outputs.StackName'
         Reach: public
-        AZIndex: 1
+        AZIndex: '1'
         AZChar: B
-        SubnetIndex: 2
+        SubnetIndex: '2'
         SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
       TemplateURL: '../vpc-subnet/module.yml'
   SubnetBPrivate:
@@ -121,9 +121,9 @@ Resources:
       Parameters:
         VpcPlainModule: !GetAtt 'VpcPlain.Outputs.StackName'
         Reach: private
-        AZIndex: 1
+        AZIndex: '1'
         AZChar: B
-        SubnetIndex: 3
+        SubnetIndex: '3'
         SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
       TemplateURL: '../vpc-subnet/module.yml'
   NatGatewayB:
@@ -142,9 +142,9 @@ Resources:
       Parameters:
         VpcPlainModule: !GetAtt 'VpcPlain.Outputs.StackName'
         Reach: public
-        AZIndex: 2
+        AZIndex: '2'
         AZChar: C
-        SubnetIndex: 4
+        SubnetIndex: '4'
         SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
       TemplateURL: '../vpc-subnet/module.yml'
   SubnetCPrivate:
@@ -154,9 +154,9 @@ Resources:
       Parameters:
         VpcPlainModule: !GetAtt 'VpcPlain.Outputs.StackName'
         Reach: private
-        AZIndex: 2
+        AZIndex: '2'
         AZChar: C
-        SubnetIndex: 5
+        SubnetIndex: '5'
         SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
       TemplateURL: '../vpc-subnet/module.yml'
   NatGatewayC:
