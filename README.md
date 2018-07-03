@@ -32,6 +32,18 @@ Resources:
       TemplateURL: './node_modules/@cfn-modules/vpc/module.yml'
 ```
 
+## Standalone usage
+
+You might want to use this module without embedding it as a nested stack because you want to share the VPC stack with many other CloudFormation stacks.
+
+```
+npm i @cfn-modules/vpc
+aws cloudformation package --template-file ./node_modules/@cfn-modules/vpc/module.yml --s3-bucket $BucketName --output-template-file packaged.yml
+aws cloudformation deploy --template-file packaged.yml --stack-name vpc --capabilities CAPABILITY_IAM
+```
+
+Once the stack is created, you can use the stack name (in this case `vpc`) as the value for the `VpcModule` parameter in other `cfn-modules`.
+
 ## Parameters
 
 <table>
