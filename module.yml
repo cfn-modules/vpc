@@ -207,7 +207,7 @@ Outputs:
   ModuleId:
     Value: 'vpc'
   ModuleVersion:
-    Value: '0.0.25'
+    Value: '0.0.26'
   StackName:
     Value: !Ref 'AWS::StackName'
   Id:
@@ -218,6 +218,26 @@ Outputs:
     Value: !Sub '10.${ClassB}.0.0/16'
     Export:
       Name: !Sub '${AWS::StackName}-CidrBlock'
+  AvailabilityZones:
+    Value: !If
+    - HasAvailabilityZoneC
+    - !Sub '${SubnetAPublic.Outputs.AvailabilityZone},${SubnetBPublic.Outputs.AvailabilityZone},${SubnetCPublic.Outputs.AvailabilityZone}'
+    - !Sub '${SubnetAPublic.Outputs.AvailabilityZone},${SubnetBPublic.Outputs.AvailabilityZone}'
+    Export:
+      Name: !Sub '${AWS::StackName}-AvailabilityZones'
+  AvailabilityZoneA:
+    Value: !GetAtt 'SubnetAPublic.Outputs.AvailabilityZone'
+    Export:
+      Name: !Sub '${AWS::StackName}-AvailabilityZoneA'
+  AvailabilityZoneB:
+    Value: !GetAtt 'SubnetAPublic.Outputs.AvailabilityZone'
+    Export:
+      Name: !Sub '${AWS::StackName}-AvailabilityZoneA'
+  AvailabilityZoneC:
+    Condition: HasAvailabilityZoneC
+    Value: !GetAtt 'SubnetAPublic.Outputs.AvailabilityZone'
+    Export:
+      Name: !Sub '${AWS::StackName}-AvailabilityZoneA'
   SubnetIdsPublic:
     Value: !If
     - HasAvailabilityZoneC
