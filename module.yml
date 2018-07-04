@@ -207,7 +207,7 @@ Outputs:
   ModuleId:
     Value: 'vpc'
   ModuleVersion:
-    Value: '0.0.26'
+    Value: '0.0.27'
   StackName:
     Value: !Ref 'AWS::StackName'
   Id:
@@ -232,12 +232,12 @@ Outputs:
   AvailabilityZoneB:
     Value: !GetAtt 'SubnetAPublic.Outputs.AvailabilityZone'
     Export:
-      Name: !Sub '${AWS::StackName}-AvailabilityZoneA'
+      Name: !Sub '${AWS::StackName}-AvailabilityZoneB'
   AvailabilityZoneC:
     Condition: HasAvailabilityZoneC
     Value: !GetAtt 'SubnetAPublic.Outputs.AvailabilityZone'
     Export:
-      Name: !Sub '${AWS::StackName}-AvailabilityZoneA'
+      Name: !Sub '${AWS::StackName}-AvailabilityZoneC'
   SubnetIdsPublic:
     Value: !If
     - HasAvailabilityZoneC
