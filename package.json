@@ -5,15 +5,12 @@
   "author": "Michael Wittig <michael@widdix.de>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@cfn-modules/vpc-plain": "^0",
-    "@cfn-modules/vpc-subnet": "^0",
-    "@cfn-modules/vpc-flow-log": "^0",
-    "@cfn-modules/vpc-nat-gateway": "^0"
+    "@cfn-modules/vpc-plain": "^0.0.6",
+    "@cfn-modules/vpc-subnet": "^0.0.9",
+    "@cfn-modules/vpc-flow-log": "^0.0.5",
+    "@cfn-modules/vpc-nat-gateway": "^0.0.4"
   },
-  "keywords": [
-    "cfn-modules",
-    "cfn-modules:ExposeId"
-  ],
+  "keywords": ["cfn-modules", "cfn-modules:ExposeId"],
   "homepage": "https://github.com/cfn-modules",
   "bugs": {
     "url": "https://github.com/cfn-modules/vpc/issues"
