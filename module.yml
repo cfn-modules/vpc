@@ -207,7 +207,7 @@ Outputs:
   ModuleId:
     Value: 'vpc'
   ModuleVersion:
-    Value: '0.0.27'
+    Value: '0.0.28'
   StackName:
     Value: !Ref 'AWS::StackName'
   Id:
@@ -218,6 +218,10 @@ Outputs:
     Value: !Sub '10.${ClassB}.0.0/16'
     Export:
       Name: !Sub '${AWS::StackName}-CidrBlock'
+  NumberOfAvailabilityZones:
+    Value: !Ref NumberOfAvailabilityZones
+    Export:
+      Name: !Sub '${AWS::StackName}-NumberOfAvailabilityZones'
   AvailabilityZones:
     Value: !If
     - HasAvailabilityZoneC
