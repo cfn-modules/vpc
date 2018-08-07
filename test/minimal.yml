@@ -6,8 +6,8 @@ Resources:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
       Parameters:
-        S3Endpoint: 'false' # speed up the example
-        DynamoDBEndpoint: 'false' # speed up the example
-        FlowLog: 'false' # speed up the example
-        NatGateways: 'false' # speed up the example
+        S3Endpoint: 'false' # speed up the test
+        DynamoDBEndpoint: 'false' # speed up the test
+        FlowLog: 'false' # speed up the test
+        NatGateways: 'false' # speed up the test
       TemplateURL: './node_modules/@cfn-modules/vpc/module.yml'
