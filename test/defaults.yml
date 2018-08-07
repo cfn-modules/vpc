@@ -1,0 +1,8 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'cfn-modules test'
+Resources:
+  Vpc:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: './node_modules/@cfn-modules/vpc/module.yml'
