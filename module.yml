@@ -234,12 +234,12 @@ Outputs:
     Export:
       Name: !Sub '${AWS::StackName}-AvailabilityZoneA'
   AvailabilityZoneB:
-    Value: !GetAtt 'SubnetAPublic.Outputs.AvailabilityZone'
+    Value: !GetAtt 'SubnetBPublic.Outputs.AvailabilityZone'
     Export:
       Name: !Sub '${AWS::StackName}-AvailabilityZoneB'
   AvailabilityZoneC:
     Condition: HasAvailabilityZoneC
-    Value: !GetAtt 'SubnetAPublic.Outputs.AvailabilityZone'
+    Value: !GetAtt 'SubnetCPublic.Outputs.AvailabilityZone'
     Export:
       Name: !Sub '${AWS::StackName}-AvailabilityZoneC'
   SubnetIdsPublic:
