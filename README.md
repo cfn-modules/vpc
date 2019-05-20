@@ -35,6 +35,22 @@ Resources:
       TemplateURL: './node_modules/@cfn-modules/vpc/module.yml'
 ```
 
+## Examples
+
+* [asg-singleton-ssm](https://github.com/cfn-modules/docs/tree/master/examples/asg-singleton-ssm)
+* [ec2-ebs](https://github.com/cfn-modules/docs/tree/master/examples/ec2-ebs)
+* [ec2-efs](https://github.com/cfn-modules/docs/tree/master/examples/ec2-efs)
+* [ec2-mysql](https://github.com/cfn-modules/docs/tree/master/examples/ec2-mysql)
+* [ec2-postgres](https://github.com/cfn-modules/docs/tree/master/examples/ec2-postgres)
+* [ec2-ssh-bastion](https://github.com/cfn-modules/docs/tree/master/examples/ec2-ssh-bastion)
+* [ec2-ssm](https://github.com/cfn-modules/docs/tree/master/examples/ec2-ssm)
+* [fargate-alb-proxy-pattern](https://github.com/cfn-modules/docs/tree/master/examples/fargate-alb-proxy-pattern)
+* [fargate-alb-single-container](https://github.com/cfn-modules/docs/tree/master/examples/fargate-alb-single-container)
+
+## Related modules
+
+none
+
 ## Standalone usage
 
 You might want to use this module without embedding it as a nested stack because you want to share the VPC stack with many other CloudFormation stacks.
