@@ -127,10 +127,10 @@ Once the stack is created, you can use the stack name (in this case `vpc`) as th
     </tr>
     <tr>
       <td>NatGateways</td>
-      <td>Add Nat Gateway per private Subnet?</td>
+      <td>Add Nat Gateway for pivate subnet(s) per public Subnet?</td>
       <td>true</td>
       <td>no</td>
-      <td>[true, false]</td>
+      <td>[true, false, single]</td>
     </tr>
   </tbody>
 </table>
