@@ -61,7 +61,7 @@ aws cloudformation package --template-file ./node_modules/@cfn-modules/vpc/modul
 aws cloudformation deploy --template-file packaged.yml --stack-name vpc --capabilities CAPABILITY_IAM
 ```
 
-Once the stack is created, you can use the stack name (in this case `vpc`) as the value for the `VpcModule` parameter in other `cfn-modules`. If this template has been embedded in a parent template where the default have been overridden it is important to re-export the outputs of the stack so they can be used in oher stand-alone stacks:
+Once the stack is created, you can use the stack name (in this case `vpc`) as the value for the `VpcModule` parameter in other `cfn-modules`. If this template has been embedded in a parent template where the default have been overridden, it is important to re-export the outputs of the stack so they can be used in oher stand-alone stacks:
 
 ```
 StackName:
