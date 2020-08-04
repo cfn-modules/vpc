@@ -1,6 +1,3 @@
-[![Build Status](https://travis-ci.org/cfn-modules/vpc.svg?branch=master)](https://travis-ci.org/cfn-modules/vpc)
-[![NPM version](https://img.shields.io/npm/v/@cfn-modules/vpc.svg)](https://www.npmjs.com/package/@cfn-modules/vpc)
-
 # cfn-modules: AWS VPC
 
 AWS VPC using two or three availability zones with public and private subnets, VPC endpoints for DynamoDB and S3, Flow Logs, and NAT gateways.
