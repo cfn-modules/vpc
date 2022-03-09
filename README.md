@@ -12,7 +12,7 @@ npm i @cfn-modules/vpc
 
 ## Usage
 
-```
+```yaml
 ---
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'cfn-modules example'
@@ -25,6 +25,7 @@ Resources:
         ClassB: 0 # optional
         NumberOfAvailabilityZones: 3 # optional
         S3Endpoint: true # optional
+        XRayEndpoint: false # optional
         DynamoDBEndpoint: true # optional
         FlowLog: 'reject-only' # optional
         FlowLogRetentionInDays: 14 # optional
@@ -135,6 +136,13 @@ This will mean you can refer to the `VpcModule` in other configurations.
       <td>NatGateways</td>
       <td>Add Nat Gateway per private Subnet?</td>
       <td>true</td>
+      <td>no</td>
+      <td>[true, false]</td>
+    </tr>
+    <tr>
+      <td>XRayEndpoint</td>
+      <td>Add <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-security-vpc-endpoint.html">X-Ray endpoint</a> to VPC?</td>
+      <td>false</td>
       <td>no</td>
       <td>[true, false]</td>
     </tr>

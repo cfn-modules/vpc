@@ -38,6 +38,11 @@ Parameters:
     Type: String
     Default: true
     AllowedValues: [true, false]
+  XRayEndpoint:
+    Description: 'Add X-Ray endpoint to VPC?'
+    Type: String
+    Default: false
+    AllowedValues: [true, false]
   DynamoDBEndpoint:
     Description: 'Add DynamoDB endpoint to VPC?'
     Type: String
@@ -61,6 +66,7 @@ Parameters:
 Conditions:
   HasAvailabilityZoneC: !Equals [!Ref NumberOfAvailabilityZones, 3]
   HasS3Endpoint: !Equals [!Ref S3Endpoint, true]
+  HasXRayEndpoint: !Equals [!Ref XRayEndpoint, true]
   HasDynamoDBEndpoint: !Equals [!Ref DynamoDBEndpoint, true]
   HasFlowLog: !Not [!Equals [!Ref FlowLog, false]]
   HasFlowLogRejectOnly: !Equals [!Ref FlowLog, 'reject-only']
@@ -181,6 +187,35 @@ Resources:
         - !GetAtt 'SubnetBPrivate.Outputs.RouteTableId'
       ServiceName: !Sub 'com.amazonaws.${AWS::Region}.s3'
       VpcId: !GetAtt 'VpcPlain.Outputs.Id'
+  XRaySecurityGroup:
+    Condition: HasXRayEndpoint
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: !Sub '${AWS::StackName}-XRay'
+      VpcId: !GetAtt 'VpcPlain.Outputs.Id'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: !Sub '10.${ClassB}.0.0/16'
+          Description: 'Allow everything in VPC to access private X-Ray endpoint'
+  VPCEndpointXRay:
+    Condition: HasXRayEndpoint
+    Type: 'AWS::EC2::VPCEndpoint'
+    Properties:
+      ServiceName: !Sub 'com.amazonaws.${AWS::Region}.xray'
+      VpcId: !GetAtt 'VpcPlain.Outputs.Id'
+      VpcEndpointType: 'Interface'
+      PrivateDnsEnabled: true
+      SecurityGroupIds:
+        - !Ref XRaySecurityGroup
+      SubnetIds: !If
+        - HasAvailabilityZoneC
+        - - !GetAtt 'SubnetAPrivate.Outputs.Id'
+          - !GetAtt 'SubnetBPrivate.Outputs.Id'
+          - !GetAtt 'SubnetCPrivate.Outputs.Id'
+        - - !GetAtt 'SubnetAPrivate.Outputs.Id'
+          - !GetAtt 'SubnetBPrivate.Outputs.Id'
   VPCEndpointDynamoDB:
     Condition: HasDynamoDBEndpoint
     Type: 'AWS::EC2::VPCEndpoint'
