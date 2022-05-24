@@ -133,10 +133,10 @@ This will mean you can refer to the `VpcModule` in other configurations.
     </tr>
     <tr>
       <td>NatGateways</td>
-      <td>Add Nat Gateway per private Subnet?</td>
+      <td>Add Nat Gateway for pivate subnet(s) per public Subnet?</td>
       <td>true</td>
       <td>no</td>
-      <td>[true, false]</td>
+      <td>[true, false, single]</td>
     </tr>
   </tbody>
 </table>
