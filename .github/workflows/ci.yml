@@ -8,16 +8,11 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - uses: 'actions/checkout@v4'
+      with:
+        submodules: true
     - uses: 'actions/setup-python@v5'
       with:
         python-version: '3.12'
-    - uses: 'actions/setup-node@v4'
-      with:
-        node-version: 20
-    - name: npm
-      run: |
-        working-directory: ./test
-        npm ci
     - name: yamlllint
       run: |
         pip install yamllint==1.33.0
