@@ -21,5 +21,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/cfn-modules/vpc.git"
+  },
+  "dependencies": {
+    "@cfn-modules/vpc-flow-log": "^1.1.0",
+    "@cfn-modules/vpc-nat-gateway": "^1.1.2",
+    "@cfn-modules/vpc-plain": "^1.0.0",
+    "@cfn-modules/vpc-subnet": "^1.0.0"
   }
 }
