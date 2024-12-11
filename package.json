@@ -4,6 +4,12 @@
   "description": "AWS VPC using two or three availability zones with public and private subnets, VPC endpoints for DynamoDB and S3, Flow Logs, and NAT gateways.",
   "author": "Michael Wittig <michael@widdix.de>",
   "license": "Apache-2.0",
+  "dependencies": {
+    "@cfn-modules/vpc-flow-log": "1.1.0",
+    "@cfn-modules/vpc-nat-gateway": "1.1.2",
+    "@cfn-modules/vpc-plain": "1.0.0",
+    "@cfn-modules/vpc-subnet": "1.0.0"
+  },
   "bundledDependencies": [
     "@cfn-modules/vpc-flow-log",
     "@cfn-modules/vpc-nat-gateway",
