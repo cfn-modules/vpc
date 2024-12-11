@@ -145,7 +145,7 @@ Resources:
         AZIndex: '2'
         AZChar: C
         SubnetIndex: '4'
-        SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
+        SubnetCount: 6
       TemplateURL: './node_modules/@cfn-modules/vpc-subnet/module.yml'
   SubnetCPrivate:
     Condition: HasAvailabilityZoneC
@@ -157,7 +157,7 @@ Resources:
         AZIndex: '2'
         AZChar: C
         SubnetIndex: '5'
-        SubnetCount: !If [HasAvailabilityZoneC, 6, 4]
+        SubnetCount: 6
       TemplateURL: './node_modules/@cfn-modules/vpc-subnet/module.yml'
   NatGatewayC:
     Condition: HasAvailabilityZoneCAndNatGateways
