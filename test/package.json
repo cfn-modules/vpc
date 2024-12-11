@@ -1,9 +1,9 @@
 {
   "private": true,
   "dependencies": {
-    "eslint": "8.56.0",
-    "ava": "6.1.1",
-    "@cfn-modules/test": "0.9.0",
+    "eslint": "8.57.1",
+    "ava": "6.2.0",
+    "@cfn-modules/test": "0.9.1",
     "@cfn-modules/vpc": "file:../"
   },
   "scripts": {
