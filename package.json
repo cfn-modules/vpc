@@ -5,10 +5,10 @@
   "author": "Michael Wittig <michael@widdix.de>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@cfn-modules/vpc-flow-log": "1.1.0",
-    "@cfn-modules/vpc-nat-gateway": "1.1.2",
-    "@cfn-modules/vpc-plain": "1.0.0",
-    "@cfn-modules/vpc-subnet": "1.0.0"
+    "@cfn-modules/vpc-flow-log": "2.0.0",
+    "@cfn-modules/vpc-nat-gateway": "2.0.0",
+    "@cfn-modules/vpc-plain": "2.0.1",
+    "@cfn-modules/vpc-subnet": "2.1.0"
   },
   "bundledDependencies": [
     "@cfn-modules/vpc-flow-log",
